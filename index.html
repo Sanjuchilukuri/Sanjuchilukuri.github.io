@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- animate -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous"></script>
+    
+    <title>sanju - porfolio</title>
+    <!-- icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- own css -->
+    <link rel="stylesheet" type="text/css"  href="index.css">
+    <link rel="icon" href="./Images/icon.png" type="image">
+
+<script type="text/JavaScript">
+    
+    document.addEventListener("DOMContentLoaded", function() {
+        let toggle = document.querySelector(".toggle");
+        let menu = document.querySelector(".menu");
+
+        toggle.addEventListener("click", function() {
+            menu.classList.toggle("active");
+        });
+    });
+
+    var textArray = ['I Am Sanju', 'Enthusiastic Coder', 'Full Stack Developer', 'AWS Cloud Practitioner' , 'DevOps Engineer'];
+    var index = 0;
+    var charIndex = 0;
+    function type() {
+        if(charIndex < textArray[index].length) {
+            document.getElementById('animated-text').textContent += textArray[index].charAt(charIndex);
+            charIndex++;
+            setTimeout(type, 200); // Speed of typing
+        } else {
+            setTimeout(erase, 1000); // Time to wait before starting to erase
+        }
+    }
+
+    function erase() {
+        if(charIndex >= 0) {
+            var temp = textArray[index].substr(0, charIndex);
+            document.getElementById('animated-text').textContent = temp;
+            charIndex--;
+            setTimeout(erase, 100); // Speed of erasing
+        } else {
+            index++;
+            if(index>=textArray.length) {
+                index=0;
+            }
+            setTimeout(type, 200); // Time to wait before typing again
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', function(event) {
+        setTimeout(type, 200);
+    });
+
+</script>
+
+
+</head>
+<body >
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div class="nav_bar sticky-top" >
+        <div class="name">Sanju</div>
+        <i class="fas fa-bars toggle"></i>
+        <div class="menu">
+            <ul>
+                <li><a href="#a">About</a></li>
+                <li><a href="#s">Skills</a></li>
+                <li><a href="#cp">Code potray</a></li>
+                <!-- <li><a href="#">Certifications</a></li> -->
+                <li><a href="#p">Projects</a></li>
+                <li><a href="#c">contact</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="container ">
+        <div class=" row pt-5 mt-5 ">
+            <div class="col-lg mx-auto pt-5 mt-5 text-center fw-bolder  " >
+                <!-- code here -->
+                <span id="animated-text" ></span><br>
+                <i class="bi bi-github large-icon me-5" onclick="window.open('https://github.com/Sanjuchilukuri', '_blank');" style="cursor: pointer;"></i>
+                <i class="bi bi-linkedin large-icon me-5" onclick="window.open('https://www.linkedin.com/in/sanju-chilukuri/', '_blank');" style="cursor: pointer;"></i>
+                <i class="bi bi-file-person large-icon" onclick="window.open('./Images/Resume.pdf', '_blank');" style="cursor: pointer;"></i>
+                <!-- <a href="./Images/Resume.pdf" -->
+            </div>
+            <div class="col-lg photo mx-auto" style="background-color:transparent ; ">
+                <img class="mx-auto d-grid justify-content-center align-items-center rounded-5  " src="./Images/profile_photo.png" alt="Sanju" >
+            </div>
+        </div>
+    </div>
+
+
+    <div id="a" class="about mx-auto pt-5 mt-5  " style="background-color: white; color: black;">
+        <h1 data-aos="fade-down"  class="fs-1 text-center pb-3 aos-init aos-animate" >About</h1>
+        <div class="container">
+            <div class="row pt-3">
+                <div class="col-lg mt-5  text-center "  >
+                        <p data-aos="fade-right" class="pl-3 fs-5 " >A motivated web developer, I have honed my skills in HTML, CSS, JavaScript, Bootstrap, and SQL through over 1000 hours of coding experience and extensive study 
+                        of data structures and algorithms. Skilled in C++, Java, Python, and exploring DevOps practices, I have a robust understanding of cloud computing and Linux. 
+                        With experience developing team projects and a dedication to problem-solving, I am eager to contribute to a dynamic tech company.
+                    </p>
+                </div>
+                <div class="col-lg mt-5 pt-5  mx-auto ">
+                    <img data-aos="fade-left" class="rounded-4 d-grid justify-content-center align-items-center mx-auto aos-init" src="./Images/About_image.gif" alt="Sanju" style="height: 250px; width: 330px; box-shadow: 4px 12px 20px 1px rgb(30, 58, 138);">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="s" class="about mx-auto pt-5 mt-5  " style="background-color: white; color: black;">
+        <h1 data-aos="fade-right" class="fs-1 text-center pb-5" >Skills</h1>
+
+        <div class="container mx-auto">
+            <div data-aos="fade-up" class="row row-cards me-lg-5 ms-lg-5 mx-auto row-gap-1">
+                <div class="col-lg-3 col-md-4 col-6 text-center " >
+                    <div class="card flex-column flex-grow-1 rounded-4 " style="background-color: rgb(192, 238, 242);  box-shadow: 4px 12px 20px 1px white;">
+                        <img class="card-body mx-auto img-fluid" src="Images/HTML.png" style="width: 9rem; height: 8rem;"/>
+                        <p class="fw-bolder">HTML</p>
+                    </div>    
+                </div>
+                <div class="col-lg-3 col-md-4 col-6 text-center " >
+                    <div class="card flex-column flex-grow-1 rounded-4" style="background-color: rgb(192, 238, 242);  box-shadow: 4px 12px 20px 1px white;">
+                        <img class="card-body mx-auto img-fluid" src="Images/CSS.png" style="width: 9rem; height: 8rem"/>
+                        <p class="fw-bolder">CSS</p>
+                    </div>    
+                </div>
+                <div class="col-lg-3 col-md-4 col-6  text-center " >
+                    <div class="card flex-column flex-grow-1 rounded-4" style="background-color: rgb(192, 238, 242);  box-shadow: 4px 12px 20px 1px white;">
+                        <img class="card-body mx-auto img-fluid" src="Images/JS.png" style="width: 9rem; height: 8rem"/>
+                        <p class="fw-bolder">JS</p>
+                    </div>    
+                </div>
+                <div class="col-lg-3 col-md-4 col-6  text-center d-flex" >
+                    <div class="card flex-column flex-grow-1 rounded-4" style="background-color: rgb(192, 238, 242);  box-shadow: 4px 12px 20px 1px white;">
+                        <img class="card-body mx-auto img-fluid" src="Images/BOOTSTRAP.png" style="width: 9rem; height: 8rem"/>
+                        <p class="fw-bolder">Bootstrap</p>
+                    </div>    
+                </div>
+                <div class="col-lg-3 col-md-4 col-6 text-center " >
+                    <div class="card flex-column flex-grow-1 rounded-4" style="background-color: rgb(192, 238, 242);  box-shadow: 4px 12px 20px 1px white;">
+                        <img class="card-body mx-auto img-fluid" src="Images/c.png" style="width: 10rem; height: 8rem"/>
+                        <p class="fw-bolder">C</p>
+                    </div>    
+                </div>
+                <div class="col-lg-3 col-md-4 col-6 text-center " >
+                    <div class="card flex-column flex-grow-1 rounded-4" style="background-color: rgb(192, 238, 242);  box-shadow: 4px 12px 20px 1px white;">
+                        <img class="card-body mx-auto img-fluid" src="Images/cpp.png" style="width: 9rem; height: 8rem"/>
+                        <p class="fw-bolder">CPP</p>
+                    </div>    
+                </div>
+                <div class="col-lg-3 col-md-4 col-6  text-center " >
+                    <div class="card flex-column flex-grow-1 rounded-4" style="background-color: rgb(192, 238, 242);  box-shadow: 4px 12px 20px 1px white;">
+                        <img class="card-body mx-auto img-fluid" src="Images/python.png" style="width: 9rem; height: 8rem"/>
+                        <p class="fw-bolder">Python</p>
+                    </div>    
+                </div>
+                <div class="col-lg-3 col-md-4 col-6  text-center " >
+                    <div class="card flex-column flex-grow-1 rounded-4" style="background-color: rgb(192, 238, 242);  box-shadow: 4px 12px 20px 1px white;">
+                        <img class="card-body mx-auto img-fluid" src="Images/java.png" style="width: 9rem; height: 8rem"/>
+                        <p class="fw-bolder">JAVA</p>
+                    </div>    
+                </div>
+                <div class="col-lg-3 col-md-4 col-6 text-center " >
+                    <div class="card flex-column flex-grow-1 rounded-4" style="background-color: rgb(192, 238, 242);  box-shadow: 4px 12px 20px 1px white;">
+                        <img class="card-body mx-auto img-fluid" src="Images/Aws.png" style="width: 10rem; height: 8rem"/>
+                        <p class="fw-bolder">AWS</p>
+                    </div>    
+                </div>
+                <div class="col-lg-3 col-md-4 col-6 text-center " >
+                    <div class="card flex-column flex-grow-1 rounded-4" style="background-color: rgb(192, 238, 242);  box-shadow: 4px 12px 20px 1px white;">
+                        <img class="card-body mx-auto img-fluid" src="Images/DevOps.png" style="width: 9rem; height: 8rem"/>
+                        <p class="fw-bolder">DevOps</p>
+                    </div>    
+                </div>
+                <div class="col-lg-3 col-md-4 col-6  text-center " >
+                    <div class="card flex-column flex-grow-1 rounded-4" style="background-color: rgb(192, 238, 242);  box-shadow: 4px 12px 20px 1px white;">
+                        <img class="card-body mx-auto img-fluid" src="Images/Linux.png" style="width: 9rem; height: 8rem"/>
+                        <p class="fw-bolder">Linux</p>
+                    </div>    
+                </div>
+                <div class="col-lg-3 col-md-4 col-6  text-center " >
+                    <div class="card flex-column flex-grow-1 rounded-4" style="background-color: rgb(192, 238, 242);  box-shadow: 4px 12px 20px 1px white;">
+                        <img class="card-body mx-auto img-fluid" src="Images/MySQL.png" style="width: 9rem; height: 8rem"/>
+                        <p class="fw-bolder">My SQL</p>
+                    </div>    
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+   <div id="cp" class="about mx-auto pt-5 mt-5  " style="background-color: white; color: black;">
+        <h1 data-aos="fade-down" class="fs-1 text-center pb-5" >Code Potray</h1>
+        <div class="container mx-auto">
+            <div data-aos="fade-up" class="row row-cards me-lg-5 ms-lg-5 mx-auto row-gap-1">
+                <div class="col-lg-3 col-md-4 col-6  " >
+                    <div class="card flex-column flex-grow-1 rounded-4 " style=" box-shadow: 4px 12px 20px 1px white;">
+                        <a href="https://auth.geeksforgeeks.org/user/sanju_chilukuri/?utm_source=geeksforgeeks&utm_medium=my_profile&utm_campaign=auth_user">
+                        <img class="card-body mx-auto img-fluid" src="https://geeks-for-geeks-stats-api-napiyo.vercel.app/?userName=sanju_chilukuri" style="width: auto; height: 8rem;"/>
+                        <p class=" fw-bolder text-center">GeeksForGeeks</p>
+                        </a>
+                    </div>    
+                </div>
+                <div class="col-lg-3 col-md-4 col-6  " >
+                    <div class="card flex-column flex-grow-1 rounded-4" style="box-shadow: 4px 12px 20px 1px white;">
+                        <a href="https://leetcode.com/sanju1819/">
+                        <img class="card-body mx-auto img-fluid" src="https://leetcard.jacoblin.cool/sanju1819?theme=dark" style="width: auto; height: 8rem"/>
+                        <p class="fw-bolder text-center">LeetCode</p>
+                        </a>
+                    </div>    
+                </div>
+                <div class="col-lg-3 col-md-4 col-6  " >
+                    <div class="card flex-column flex-grow-1 rounded-4" style="box-shadow: 4px 12px 20px 1px white;">
+                        <a href="https://www.codechef.com/users/sanju1819">
+                        <img class="card-body mx-auto img-fluid" src="https://api.thumbnail.ws/api/abc42b8070521baf9ab2c8ce507454ab55f64cd41958/thumbnail/get?url=https://www.codechef.com/users/sanju1819&width=800" style="width: auto; height: 8rem"/>
+                        <p class="fw-bolder text-center">codechef</p>
+                        </a>
+                    </div>    
+                </div>
+                <div class="col-lg-3 col-md-4 col-6 " >
+                    <div class="card flex-column flex-grow-1 rounded-4" style=" box-shadow: 4px 12px 20px 1px white;">
+                        <a href="https://www.hackerrank.com/sanju1819?hr_r=1">
+                        <img class="card-body mx-auto img-fluid" src="https://api.thumbnail.ws/api/abc42b8070521baf9ab2c8ce507454ab55f64cd41958/thumbnail/get?url=https://www.hackerrank.com/sanju1819?hr_r=1&width=800" style="width: auto; height: 8rem"/>
+                        <p class="fw-bolder text-center">HackerRank</p>
+                        </a>
+                    </div>    
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div id="p" class="about mx-auto pt-5 mt-5  " style="background-color: white; color: black;">
+        <h1 class="fs-1 text-center pb-5" >Projects</h1>
+
+        <div class="container ">
+            <div class=" row pt-5 mt-5 " style="background-color: rgb(192, 238, 242);">
+                <div class="col-lg mx-auto " >
+                    <h3 class="fw-bolder ps-4" style="color: rgba(70, 70, 249, 0.863);">Portfolio</h3>
+                    <p class="ps-4 fs-4">
+                        Developed a static website integrating attractive design elements and deployed it on the 
+                        AWS cloud platform, ensuring high performance
+                    </p>
+                    <div class="pb-5 justify-content-center text-center  ">
+                        <img src="Images/HTML.png" style="width: 2rem; height: 2rem;">
+                        <img src="Images/CSS.png" style="width: 2rem; height: 2rem;">
+                        <img src="Images/JS.png" style="width: 2rem; height: 2rem;">
+                        <img src="Images/BOOTSTRAP.png" style="width: 2rem; height: 2rem;">
+                        <br>
+                    </div>
+                </div>
+                <div class="col-lg  mx-auto pb-3" style="background-color:transparent ; ">
+                    <img class="mx-auto d-grid justify-content-center align-items-center img-fluid " src="./Images/tmp.png" style="width: 25rem; height: auto;" >
+                </div>
+            </div>
+
+            <div class=" row pt-5 mt-5 " style="background-color: rgb(192, 238, 242);">
+                <div class="col-lg mx-auto " >
+                    <h3 class="fw-bolder ps-4" style="color: rgba(70, 70, 249, 0.863);">CICD with Jenkins</h3>
+                    <p class="ps-4 fs-4">
+                        Developed a CI/CD for automating builds and deployments to enhance code consistency and speed up time-to-market. 
+                        This improved the efficiency of the development process.
+
+                    </p>
+                    <div class="pb-5 justify-content-center text-center  ">
+                        <img class="" src="Images/git.png" style="width: 2rem; height: 2rem;">
+                        <img src="Images/jenkins.png" style="width: 2rem; height: 2rem;">
+                        <img src="Images/maven.png" style="width: 2rem; height: 2rem;">
+                        <img src="Images/Tomcat.png" style="width: 2rem; height: 2rem;">
+                        <br>
+                    </div>
+                    
+                </div>
+                <div class="col-lg  mx-auto pb-3" style="background-color:transparent ; ">
+                    <img class="mx-auto d-grid justify-content-center align-items-center img-fluid  " src="./Images/cicd.png" style="width: 25rem; height: auto;" >
+                </div>
+            </div>
+        </div>
+
+        <div id="c" class="about mx-auto pt-5 mt-5  " style="background-color: white; color: black;">
+            <h1 data-aos="fade-down" class="fs-1 text-center pb-5" >Contact</h1>
+
+            <div class="container ">
+                <div class="row row-gap-5">
+                    <div data-aos="fade-left" class="col  d-flex justify-content-center justify-content-lg-end" style="background-color:transparent; ;">
+                        <div class="rounded-3 " style="height: auto; width: 300px ; border: 3px solid rgb(117, 129, 209);">
+                            <div class="rounded-3 mt-5 mx-3  p-2" style="border: 3px solid rgb(117, 129, 209);">
+                                <span class="d-flex align-items-center ">
+                                    <img src="Images/phone.png" style="height: 2rem; width: 2rem;">
+                                    <span class="ms-2 fw-bold">PHONE</span>
+                                </span>
+                                <p class="fw-bold">+91 9391022103</p>
+                            </div>
+
+                            <div class="rounded-3 mt-5 mx-3  p-2" style="border: 3px solid rgb(117, 129, 209);">
+                                <span class="d-flex align-items-center ">
+                                    <img src="Images/mail.png" style="height: 2rem; width: 2rem;">
+                                    <span class="ms-2 fw-bold">MAIL</span>
+                                </span>
+                                <p class="fw-bold">sanjuchilukuri1@gmail.com</p>
+                            </div>
+
+                            <div class="rounded-3 mt-5 mx-3 mb-3 p-2" style="border: 3px solid rgb(117, 129, 209);">
+                                <span class="d-flex align-items-center ">
+                                    <img src="Images/location.png" style="height: 2rem; width: 2rem;">
+                                    <span class="ms-2 fw-bold">LOCATION</span>
+                                </span>
+                                <p class="fw-bold">Marampally, AP</p>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div data-aos="fade-right" class="col d-flex justify-content-center justify-content-lg-start" style="background-color: transparent;">
+                        <div class="rounded-3" style="height: auto; width: 300px; border: 3px solid rgb(117, 129, 209);">
+
+                        <div class="rounded-3 mt-5 mx-4 p-2 " style="background-color: white; border: solid grey 2px;">
+                            <p class="text-center fw-bold fs-5">Contact Form</p>
+                        </div>
+
+                        <form class="mt-3  ">
+                            <div>
+                                <label class="d-block ms-4 fs-5 fw-semibold ">Name</label>
+                                <input class="ms-4 mnb" type="text" >
+                            </div>
+
+                            <div>
+                                <label class="d-block ms-4 mt-3 fw-semibold fs-5 ">Email</label>
+                                <input class="ms-4 mnb" type="email" >
+                            </div>
+
+                            <div>
+                                <label class="d-block ms-4 mt-3 fw-semibold fs-5 ">Message</label>
+                                <textarea class="ms-4 mnb"  ></textarea>
+                            </div>
+
+                            <div class="ms-4" >
+                                <button class="p-2 pb-3 rounded-3 mt-3 bg-primary fw-semibold" style="width: 90%;">Send</button>
+                            </div>
+                        </form>
+                        
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer class="text-center mt-5 fs-5 fw-semibold">© 2023 Sanju Chilukuri | All rights reserved</footer>
+    <script>
+        AOS.init();
+    </script>
+
+</body>
+</html>
